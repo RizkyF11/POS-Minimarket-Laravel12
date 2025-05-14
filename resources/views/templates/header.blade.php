@@ -218,8 +218,8 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li><a href="{{ asset('/') }}"><i class="fa fa-book"></i><span>Kelas</span></a></li>
-                    <li><a href="{{ asset('siswa') }}"><i class="fa fa-user"></i><span>Siswa</span></a></li>
+                    <li><a href="{{ asset('/') }}"><i class=" fa fa-solid fa-list"></i><span>Kategori</span></a></li>
+                    <li><a href="{{ asset('products') }}"><i class="fa fa-shopping-cart"></i><span>Product</span></a></li>
                 </ul>
             </section>
             <!-- /.sidebar -->
