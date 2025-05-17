@@ -31,9 +31,19 @@ class ProductsController extends Controller
             'id_category' => 'required|exists:categories,id_category',
             'gambar_product' => 'required|mimes:jpeg,jpg,png|max:512',
         ]);
-        
+
 
         $input = $validated;
+
+        // menambah SKU
+        do {
+            $generatedSku = 'PROD-' . str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT);
+        }while (Products::where('sku', $generatedSku)->exists());
+
+        $input['sku'] = $generatedSku;
+
+        //end sku
+
         if ($request->hasFile('gambar_product') && $request->file('gambar_product')->isValid()) {
             // Simpan ke storage/app/public/products
             $filename = $request->file('gambar_product')->store('products', 'public');
@@ -71,6 +81,10 @@ class ProductsController extends Controller
         // dd($input);
         // $result = \App\Models\Products::where('id_category', $id)->first();
         $product = Products::where('id_product', $id)->first();
+        //pertahan sku
+         $input['sku'] = $product->sku;
+        //end sku
+
         if ($request->hasFile('gambar_product') && $request->file('gambar_product')->isValid()) {
             if ($product->gambar_product) {
                 Storage::disk('public')->delete($product->gambar_product);

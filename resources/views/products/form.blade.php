@@ -39,6 +39,15 @@
                 </div>
             </div>
 
+            @if (!empty($result))
+            <div class="form-group">
+                <label class="control-label col-sm-2">SKU</label>
+                <div class="col-sm-10">
+                    <input type="text"  class="form-control" value="{{ @$result->sku}}" readonly>
+                </div>
+            </div>
+            @endif
+            
             <div class="form-group">
                 <label class="control-label col-sm-2">Stock</label>
                 <div class="col-sm-10">

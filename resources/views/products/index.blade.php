@@ -30,6 +30,7 @@
             <th>No</th>
             <th>Gambar</th>
             <th>Nama Produk</th>
+            <th>SKU</th>
             <th>Harga</th>
             <th>Stock</th>
             <th>Category</th>
@@ -45,6 +46,7 @@
             <img src="{{ asset('storage/'.@$row->gambar_product) }}" width="80px" class="img" alt="">
             </td>
             <td>{{ $row->nama_product }}</td>
+            <td>{{ $row->sku}}</td>
             <td>{{ $row->harga}}</td>
             <td>{{ $row->stok}}</td>
             <td>{{$row->categories?->nama_kategori}}</td>

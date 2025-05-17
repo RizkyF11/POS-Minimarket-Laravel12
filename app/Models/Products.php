@@ -11,7 +11,7 @@ class Products extends Model
     protected $table = 'products';
 
     protected $fillable = [
-         'nama_product', 'stok', 'harga', 'id_category', 'gambar_product'
+         'nama_product','sku', 'stok', 'harga', 'id_category', 'gambar_product'
     ];
 
     public function categories()
