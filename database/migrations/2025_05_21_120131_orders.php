@@ -15,8 +15,8 @@ return new class extends Migration
             $table->increments('id_orders');
             $table->string('invoice', 191);
             $table->unsignedBigInteger('customer_id'); // gunakan unsigned jika foreign key
-            $table->unsignedBigInteger('id_user');     // gunakan unsigned jika foreign key
-            $table->integer('total');
+            $table->unsignedBigInteger('id_user');    // gunakan unsigned jika foreign key
+            $table->decimal('total', 12, 2);
             $table->timestamps();
         });
     }

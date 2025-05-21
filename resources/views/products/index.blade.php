@@ -46,7 +46,12 @@
             <img src="{{ asset('storage/'.@$row->gambar_product) }}" width="80px" class="img" alt="">
             </td>
             <td>{{ $row->nama_product }}</td>
-            <td>{{ $row->sku}}</td>
+            <td>
+              <!-- generate barcode -->
+               <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($row->sku, 'C128', 1, 30)}} " alt="barcode">
+               <br>
+              {{ $row->sku}}
+            </td>
             <td>{{ $row->harga}}</td>
             <td>{{ $row->stok}}</td>
             <td>{{$row->categories?->nama_kategori}}</td>

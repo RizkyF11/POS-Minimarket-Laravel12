@@ -220,6 +220,7 @@
                     <li class="header">MAIN NAVIGATION</li>
                     <li><a href="{{ asset('/') }}"><i class=" fa fa-solid fa-list"></i><span>Kategori</span></a></li>
                     <li><a href="{{ asset('products') }}"><i class="fa fa-shopping-cart"></i><span>Product</span></a></li>
+                    <li><a href="{{ asset('kasir') }}"><i class="fa fa-shopping-basket"></i><span>Kasir</span></a></li>
                 </ul>
             </section>
             <!-- /.sidebar -->

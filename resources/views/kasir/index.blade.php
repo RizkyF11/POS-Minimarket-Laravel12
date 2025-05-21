@@ -64,12 +64,12 @@
                         <div class="col-sm-6 col-md-3">
                             <div class="thumbnail">
                                 <div class="img-square-wrapper">
-                                    <img src="{{ asset('uploads/' . @$product->foto) }}" alt="Produk" class="img-square img-responsive">
+                                    <img src="{{ asset('storage//' . @$product->gambar_product) }}" alt="Produk" class="img-square img-responsive">
                                 </div>
                                 <div class="caption text-center">
-                                    <h4>{{ $product->nama_produk }}</h4>
-                                    <p>{{ $product->description }}</p>
-                                    <p><strong>Rp {{ number_format($product->price, 0, ',', '.') }}</strong></p>
+                                    <h4>{{ $product->nama_product }}</h4>
+                                    <p><strong>Rp {{ number_format($product->harga, 0, ',', '.') }}</strong></p>
+                                    <p>Stok: {{ $product->stok }}</p>
                                     <p>
                                     <form action="{{ url('keranjang/add') }}" method="POST">
                                         @csrf
@@ -89,16 +89,6 @@
             <!-- Kolom Kanan: Panel Transaksi -->
             <div class="col-md-4">
                 <div class="panel panel-default" style="padding: 15px;">
-                    <div class="panel-heading">
-                        <strong><i class="glyphicon glyphicon-user"></i> Umum</strong>
-                        <div class="pull-right">
-                            <select class="form-control input-sm" style="display: inline-block; width: auto;">
-                                <option>Agus Prawoto Hadi</option>
-                            </select>
-                            <input type="date" class="form-control input-sm" style="display: inline-block; width: auto;">
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
 
                     <div class="panel-body">
                         @php
@@ -147,8 +137,6 @@
 
                     <p><strong>Sub Total:</strong> <span class=" pull-right">Rp 152.700</span></p>
                     <p>Diskon (5%) <span class="pull-right">Rp -7.635</span></p>
-                    <p>Penyesuaian <span class="pull-right">Rp 0</span></p>
-                    <p>Pajak (11%) <span class="pull-right">Rp 15.957</span></p>
                     <hr>
                     <h4><strong>Total:</strong> <span class="pull-right text-purple">Rp 161.022</span></h4>
                 </div>
