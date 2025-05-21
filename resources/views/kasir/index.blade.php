@@ -136,16 +136,40 @@
                         <hr>
 
                     </div>
+                    
+                    <!-- kondisi menjumlahkan sub total -->
+                    @php
+                    $total = 0;
+                    foreach($keranjang as $item) {
+                        $total += $item['harga'] * $item['jumlah'];
+                    }
+                    @endphp
+
+                    <!-- end kondisi sub total -->
+
+                    <!-- kondisi diskon + total -->
+                     @php
+                     $diskon = 0;
+                     if ($total >= 50000) {
+                        $diskon = $total * 0.10;
+                     } else if ($total >= 100000) {
+                        $diskon = $total * 0.15;
+                     }
+                     $totalBayar = $total - $diskon;
+                     @endphp
+                     <!-- end kondisi diskon +total-->
 
 
-                    <p><strong>Sub Total:</strong> <span class=" pull-right">Rp 152.700</span></p>
-                    <p>Diskon (5%) <span class="pull-right">Rp -7.635</span></p>
+                    <p><strong>Sub Total:</strong> <span class=" pull-right">Rp. {{number_format($total, 0, ',', '.')}} </span></p>
+                    <p>Diskon <span class="pull-right">Rp -{{number_format($diskon, 0, ',','.')}}</span></p>
                     <hr>
-                    <h4><strong>Total:</strong> <span class="pull-right text-purple">Rp 161.022</span></h4>
+                    <h4><strong>Total:</strong> <span class="pull-right text-purple">Rp. {{number_format($totalBayar, 0, ',','.')}}</span></h4>
+
+                    
                 </div>
 
                 <div class="panel-footer text-center">
-                    <button class="btn btn-success btn-lg btn-block"><strong>Bayar Rp 161.022</strong></button>
+                    <button class="btn btn-success btn-lg btn-block"><strong> Bayar Rp. {{number_format($totalBayar, 0, ',','.')}}</strong></button>
                 </div>
             </div>
         </div>
