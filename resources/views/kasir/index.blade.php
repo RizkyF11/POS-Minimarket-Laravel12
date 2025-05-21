@@ -126,10 +126,13 @@
                             <hr>
                         </div>
                         @endforeach
+
+                        @if(session('keranjang') && count(session('keranjang')) >0)
                         <form action="{{ url('keranjang/hapus-semua') }}" method="POST" onsubmit="return confirm('Yakin hapus semua keranjang?');">
                             @csrf
-                            <button type="submit" class="btn btn-danger btn-sm">Hapus Semua</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                         </form>
+                        @endif
                         <hr>
 
                     </div>
