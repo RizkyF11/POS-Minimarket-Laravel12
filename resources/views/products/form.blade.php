@@ -39,14 +39,7 @@
                 </div>
             </div>
 
-            @if (!empty($result))
-            <div class="form-group">
-                <label class="control-label col-sm-2">SKU</label>
-                <div class="col-sm-10">
-                    <input type="text"  class="form-control" value="{{ @$result->sku}}" readonly>
-                </div>
-            </div>
-            @endif
+            
             
             <div class="form-group">
                 <label class="control-label col-sm-2">Stock</label>
@@ -54,7 +47,8 @@
                     <input type="text" name="stok" class="form-control" placeholder="Masukkan Stock" value="{{ @$result->stok }}">
                 </div>
             </div>
-
+            
+            
             <div class="form-group">
                 <label class="control-label col-sm-2">Harga</label>
                 <div class="col-sm-10">
@@ -73,12 +67,20 @@
                 </div>
             </div>
 
+            
             <div class="form-group">
                 <label class="control-label col-sm-2">Gambar Produk</label>
                 <div class="col-sm-10">
                     <input type="file" name="gambar_product">
                 </div>
             </div>
+            
+            <div class="form-group">
+                <label class="control-label col-sm-2">SKU</label>
+                <div class="col-sm-10">
+                    <input type="text" name="sku" id="sku" class="form-control" placeholder="Masukkan SKU" required value="{{ @$result->sku }}">
+                </div>
+            </div>  
             
             <div class="form-group">
                 <div class="col-sm-10 col-sm-offset-2">

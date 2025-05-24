@@ -47,9 +47,7 @@
             </td>
             <td>{{ $row->nama_product }}</td>
             <td>
-              <!-- generate barcode -->
-               <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($row->sku, 'C128', 1, 30)}} " alt="barcode">
-               <br>
+              {!! DNS1D::getBarcodeHTML($row->sku, 'C128') !!}
               {{ $row->sku}}
             </td>
             <td>{{ $row->harga}}</td>

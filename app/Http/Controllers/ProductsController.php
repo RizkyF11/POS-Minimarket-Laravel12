@@ -26,6 +26,7 @@ class ProductsController extends Controller
     {
         $validated = $request->validate([
             'nama_product' => 'required|max:100',
+            'sku' => 'required|unique:products,sku|max:191',
             'stok' => 'required|max:100',
             'harga' => 'required|numeric|min:0',
             'id_category' => 'required|exists:categories,id_category',
@@ -34,15 +35,6 @@ class ProductsController extends Controller
 
 
         $input = $validated;
-
-        // menambah SKU
-        do {
-            $generatedSku = 'PROD-' . str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT);
-        }while (Products::where('sku', $generatedSku)->exists());
-
-        $input['sku'] = $generatedSku;
-
-        //end sku
 
         if ($request->hasFile('gambar_product') && $request->file('gambar_product')->isValid()) {
             // Simpan ke storage/app/public/products
@@ -71,6 +63,7 @@ class ProductsController extends Controller
     {
         $validated = $request->validate([
             'nama_product' => 'required|max:100',
+            'sku' => 'required|unique:products,sku|max:191',
             'stok' => 'required|max:100',
             'harga' => 'required|numeric|min:0',
             'id_category' => 'required|exists:categories,id_category',
@@ -81,9 +74,7 @@ class ProductsController extends Controller
         // dd($input);
         // $result = \App\Models\Products::where('id_category', $id)->first();
         $product = Products::where('id_product', $id)->first();
-        //pertahan sku
-         $input['sku'] = $product->sku;
-        //end sku
+        
 
         if ($request->hasFile('gambar_product') && $request->file('gambar_product')->isValid()) {
             if ($product->gambar_product) {
