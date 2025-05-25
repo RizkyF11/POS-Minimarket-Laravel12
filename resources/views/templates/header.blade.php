@@ -173,7 +173,7 @@
                                     <div class="pull-right">
                                         <form action="{{ url ('logout') }}">
                                             {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-default btn-flat">Sign out</button>
+                                            <button type="submit" class="btn btn-default btn-flat">Logout out</button>
                                         </form>
                                     </div>
                                 </li>
@@ -218,9 +218,11 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
+                    <li><a href="{{ asset('/dashboard') }}"><i class=" fa fa-solid fa-dashboard"></i><span>Dashboard</span></a></li>
                     <li><a href="{{ asset('/') }}"><i class=" fa fa-solid fa-list"></i><span>Kategori</span></a></li>
                     <li><a href="{{ asset('products') }}"><i class="fa fa-shopping-cart"></i><span>Product</span></a></li>
                     <li><a href="{{ asset('kasir') }}"><i class="fa fa-shopping-basket"></i><span>Kasir</span></a></li>
+                    <li><a href="{{ asset('users') }}"><i class="fa fa-users"></i><span>User</span></a></li>
                 </ul>
             </section>
             <!-- /.sidebar -->
