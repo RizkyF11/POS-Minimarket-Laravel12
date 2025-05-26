@@ -29,7 +29,7 @@
           <tr>
             <th>No</th>
             <th>Nama User</th>
-            <th>Password</th>
+            <!-- <th>Password</th> -->
             <th>Role</th>
             <th>Action</th>
           </tr>
@@ -40,7 +40,7 @@
           <tr>
             <td>{{ $loop->iteration}}</td>
             <td>{{ $row->nama_user }}</td>
-            <td>{{ $row->password}}</td>
+            <!-- <td>{{ $row->password}}</td> -->
             <td>{{ $row->role}}</td>
             <td>
               <a href="{{ url ("users/$row->id_user/edit") }}" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>

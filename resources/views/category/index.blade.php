@@ -8,7 +8,7 @@
     <small>Kategori</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="{{ url('/categories') }}"><i class="fa fa-dashboard"></i> Home</a></li>
     <!-- <li><a href="#">Examples</a></li> -->
     <li class="active">Data Kategori</li>
   </ol>

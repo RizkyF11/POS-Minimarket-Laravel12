@@ -8,7 +8,7 @@
     <small>Kategori</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="{{ url('/categories') }}"><i class="fa fa-dashboard"></i> Home</a></li>
     <li>Data Kategori</li>
     <li class="active">{{ empty($result) ? 'Tambah' : 'Edit'}} Data Kategori</li>
   </ol>
