@@ -166,7 +166,10 @@
                     </div>
 
                     <div class="panel-footer text-center">
-                        <button class="btn btn-success btn-lg btn-block"><strong> Bayar</strong></button>
+                        <form action="{{ url('bayar') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-success btn-lg btn-block">Bayar</button>
+                        </form>
                     </div>
 
                 </div>

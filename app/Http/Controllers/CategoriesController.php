@@ -32,8 +32,8 @@ class CategoriesController extends Controller
         $input = $request->all();
         $status = \App\Models\Categories::create($input);
 
-        if ($status) return redirect('/')->with('success', 'Data berhasil disimpan');
-        else return redirect('/')->with('error', 'Data gagal ditambahkan');
+        if ($status) return redirect('/categories')->with('success', 'Data berhasil disimpan');
+        else return redirect('/categories')->with('error', 'Data gagal ditambahkan');
     }
 
     public function edit($id)
@@ -55,8 +55,8 @@ class CategoriesController extends Controller
         $result = \App\Models\Categories::where('id_category', $id)->first();
         $status = $result->update($input);
 
-        if ($status) return redirect('/')->with('success', 'Data berhasil diubah');
-        else return redirect('/')->with('error', 'Data gagal diubah');
+        if ($status) return redirect('/categories')->with('success', 'Data berhasil diubah');
+        else return redirect('/categories')->with('error', 'Data gagal diubah');
     }
 
     public function destroy(Request $request, $id)
@@ -64,7 +64,7 @@ class CategoriesController extends Controller
         $result = \App\Models\Categories::where('id_category', $id)->first();
         $status = $result->delete();
 
-        if ($status) return redirect('/')->with('success', 'Data berhasil dihapus');
-        else return redirect('/')->with('error', 'Data gagal dihapus');
+        if ($status) return redirect('/categories')->with('success', 'Data berhasil dihapus');
+        else return redirect('/categories')->with('error', 'Data gagal dihapus');
     }
 }

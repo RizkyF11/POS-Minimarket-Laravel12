@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id_orders');
-            $table->string('invoice', 191);
-            $table->unsignedBigInteger('customer_id'); // gunakan unsigned jika foreign key
+            $table->string('invoice', 191)->unique();
             $table->unsignedBigInteger('id_user');    // gunakan unsigned jika foreign key
             $table->decimal('total', 12, 2);
             $table->timestamps();

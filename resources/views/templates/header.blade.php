@@ -222,6 +222,8 @@
                      @if(Auth::check() && Auth::user()->role === 'kasir')
                     <li><a href="{{ asset('kasir') }}"><i class="fa fa-shopping-basket"></i><span>Kasir</span></a></li>
                     @endif
+                    
+                    <li><a href="{{ asset('laporan') }}"><i class=" fa fa-solid fa-envelope"></i><span>Laporan</span></a></li>
                 </ul>
             </section>
             <!-- /.sidebar -->

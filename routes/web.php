@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\KasirController;
+use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\RoleMiddleware;
@@ -52,10 +54,16 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware(RoleMiddleware::class . ':kasir')->group(function () {
 
-        Route::get('kasir', [KasirController::class, 'index']);
+        Route::get('kasir', [KasirController::class, 'index'])->name('kasir');
         Route::post('keranjang/add', [KasirController::class, 'tambahKeKeranjang']);
         Route::post('keranjang/tambah/{id}', [KasirController::class, 'tambahJumlah']);
         Route::post('keranjang/kurang/{id}', [KasirController::class, 'kurangJumlah']);
         Route::post('keranjang/hapus-semua', [KasirController::class, 'hapusSemua']);
+        Route::post('bayar', [OrderController::class, 'bayar']);
     });
+
+    Route::get('laporan', [LaporanController::class, 'laporan'])->name('laporan');
 });
+
+
+
