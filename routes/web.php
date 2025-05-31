@@ -48,8 +48,11 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::get('/', function () {
-        return view('dashboard');
+        return view('home');
     });
+
+    //route pdf
+    Route::get('laporan/pdf', [LaporanController::class, 'cetakPdf'])->name('laporan.pdf');
 
 
     Route::middleware(RoleMiddleware::class . ':kasir')->group(function () {

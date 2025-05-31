@@ -1,31 +1,21 @@
-@extends('templates/header')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Transaksi</title>
+    <style>
+        body { font-family: sans-serif; font-size: 12px;}
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #000; padding: 5px;}
+        ul { margin: 0; padding-left: 15px;}
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center">Laporan Transaksi</h2>
+    <p>Tanggal cetak: {{now()->format('d-m-Y H:i')}}</p>
 
-@section('content')
-<!-- Content Header (Page header) -->
-<section class="content-header">
-  <h1>
-    Laporan
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="{{ url('laporan') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-    <!-- <li><a href="#">Examples</a></li> -->
-    <li class="active">Laporan</li>
-  </ol>
-</section>
-
-<!-- Main content -->
-<section class="content">
-  @include('templates.feedback')
-  <!-- Default box -->
-  <div class="box">
-    <div class="box-header with-border">
-      <a href="{{route('laporan.pdf')}}" class="btn btn-primary">
-        <i class="fa fa-print"></i> Cetak Laporan
-      </a>
-    </div>
-   
-    <div class="box-body">
-      <table class="table table-stripped">
+    <table class="table table-stripped">
         <thead>
           <tr>
             <th>No</th>
@@ -60,15 +50,5 @@
           @endforeach
         </tbody>
       </table>
-    </div>
-    <!-- /.box-body -->
-    <div class="box-footer">
-      Footer
-    </div>
-    <!-- /.box-footer-->
-  </div>
-  <!-- /.box -->
-
-</section>
-<!-- /.content -->
-@endsection
+</body>
+</html>
