@@ -62,6 +62,7 @@ Route::middleware('auth')->group(function () {
         Route::post('keranjang/kurang/{id}', [KasirController::class, 'kurangJumlah']);
         Route::post('keranjang/hapus-semua', [KasirController::class, 'hapusSemua']);
         Route::post('bayar', [OrderController::class, 'bayar']);
+        Route::get('struk/thermal/{id}', [OrderController::class, 'strukThermal'])->name('struk.thermal');
     });
 
     Route::get('laporan', [LaporanController::class, 'laporan'])->name('laporan');

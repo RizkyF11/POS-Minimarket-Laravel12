@@ -65,10 +65,16 @@ class OrderController extends Controller
             session()->forget('keranjang');
             DB::commit();
 
-            return redirect()->route('kasir')->with('success', 'Transaksi berhasil.');
+            return view('kasir.struk_option', ['order'=> $order]);
         }catch (\Exception $e) {
             DB::rollBack();
             return back()->with('error', 'Transaksi gagal:' . $e->getMessage());
         }
+    }
+
+    public function strukThermal($id)
+    {
+        $order = Orders::with('details', 'user')->findOrFail($id);
+        return view('kasir.struk_thermal', compact('order'));
     }
 }
