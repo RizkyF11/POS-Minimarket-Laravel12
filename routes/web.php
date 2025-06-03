@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\OrderController;
@@ -47,9 +48,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('products/{id}/delete', [ProductsController::class, 'destroy']);
     });
 
-    Route::get('/', function () {
-        return view('home');
-    });
+    Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
 
     //route pdf
     Route::get('laporan/pdf', [LaporanController::class, 'cetakPdf'])->name('laporan.pdf');

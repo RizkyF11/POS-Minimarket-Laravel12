@@ -210,7 +210,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
                     <!-- jika user adalah admin -->
-                     <li><a href="{{ asset('/') }}"><i class=" fa fa-solid fa-home"></i><span>Home</span></a></li>
+                     <li><a href="{{ asset('/') }}"><i class=" fa fa-solid fa-dashboard"></i><span>Dashboard</span></a></li>
                     @if(Auth::check() && Auth::user()->role === 'admin')
 
                     <li><a href="{{ asset('/categories') }}"><i class=" fa fa-solid fa-list"></i><span>Kategori</span></a></li>
